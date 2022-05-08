@@ -405,3 +405,943 @@ Total time of effective runs: 0.0 seconds
 
 
 scala>
+
+
+scala> spark.sql("create table cheechuen.t2(b1 INT, b2 INT) using parquet")
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Substitution has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Disable Hints has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Hints has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Simple Sanity Check has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.ResolveSessionCatalog ===
+!'CreateTableStatement [cheechuen, t2], [StructField(b1,IntegerType,true), StructField(b2,IntegerType,true)], parquet, false, false   'CreateTable `cheechuen`.`t2`, ErrorIfExists
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Result of Batch Resolution ===
+!'CreateTableStatement [cheechuen, t2], [StructField(b1,IntegerType,true), StructField(b2,IntegerType,true)], parquet, false, false   'CreateTable `cheechuen`.`t2`, ErrorIfExists
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Apply Char Padding has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.datasources.DataSourceAnalysis ===
+!'CreateTable `cheechuen`.`t2`, ErrorIfExists   CreateDataSourceTableCommand `cheechuen`.`t2`, false
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Result of Batch Post-Hoc Resolution ===
+!'CreateTable `cheechuen`.`t2`, ErrorIfExists   CreateDataSourceTableCommand `cheechuen`.`t2`, false
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Nondeterministic has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch UDF has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch UpdateNullability has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Cleanup has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 138
+Total time: 0.005788909 seconds
+Total number of effective runs: 2
+Total time of effective runs: 0.003177617 seconds
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Eliminate Distinct has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Finish Analysis has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Union has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch LocalRelation early has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Replace Operators has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Aggregate has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Infer Filters has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Push extra predicate through join has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Join Reorder has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Eliminate Sorts has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Decimal Optimizations has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Conditional Distinct Aggregate Rewrite has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Single Type Distinct Aggregate Rewrite has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch LocalRelation has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Check Cartesian Products has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch RewriteSubquery has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Window TopK Filter Push Down has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch PartitionPruning has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Extract Python UDFs has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch User Provided Optimizers has no effect.
+22/05/08 21:07:40 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 171
+Total time: 0.001033119 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:07:40 WARN [main] PlanChangeLogger: Batch Preparations has no effect.
+res10: org.apache.spark.sql.DataFrame = []
+
+scala>
+
+scala> spark.sql("select distinct a1, a2, 'custom' a3 from ( select * from cheechuen.t1 where a2 = 10 and 1 = 1 ) where a1 > 5 and 1 = 1 except select b1, b2, 1.0 b3 from cheechuen.t2 where b2 = 10 ").show()
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Substitution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Disable Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Simple Sanity Check has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations ===
+ 'Except false                                                         'Except false
+ :- 'Distinct                                                          :- 'Distinct
+ :  +- 'Project ['a1, 'a2, custom AS a3#72]                            :  +- 'Project ['a1, 'a2, custom AS a3#72]
+ :     +- 'Filter (('a1 > 5) AND (1 = 1))                              :     +- 'Filter (('a1 > 5) AND (1 = 1))
+ :        +- 'SubqueryAlias __auto_generated_subquery_name             :        +- 'SubqueryAlias __auto_generated_subquery_name
+ :           +- 'Project [*]                                           :           +- 'Project [*]
+ :              +- 'Filter (('a2 = 10) AND (1 = 1))                    :              +- 'Filter (('a2 = 10) AND (1 = 1))
+!:                 +- 'UnresolvedRelation [cheechuen, t1], [], false   :                 +- 'SubqueryAlias spark_catalog.cheechuen.t1
+!+- 'Project ['b1, 'b2, 1.0 AS b3#73]                                  :                    +- 'UnresolvedCatalogRelation `cheechuen`.`t1`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+!   +- 'Filter ('b2 = 10)                                              +- 'Project ['b1, 'b2, 1.0 AS b3#73]
+!      +- 'UnresolvedRelation [cheechuen, t2], [], false                  +- 'Filter ('b2 = 10)
+!                                                                            +- 'SubqueryAlias spark_catalog.cheechuen.t2
+!                                                                               +- 'UnresolvedCatalogRelation `cheechuen`.`t2`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.datasources.FindDataSourceTable ===
+ 'Except false                                                                                                                                 'Except false
+ :- 'Distinct                                                                                                                                  :- 'Distinct
+ :  +- 'Project ['a1, 'a2, custom AS a3#72]                                                                                                    :  +- 'Project ['a1, 'a2, custom AS a3#72]
+ :     +- 'Filter (('a1 > 5) AND (1 = 1))                                                                                                      :     +- 'Filter (('a1 > 5) AND (1 = 1))
+ :        +- 'SubqueryAlias __auto_generated_subquery_name                                                                                     :        +- 'SubqueryAlias __auto_generated_subquery_name
+ :           +- 'Project [*]                                                                                                                   :           +- 'Project [*]
+ :              +- 'Filter (('a2 = 10) AND (1 = 1))                                                                                            :              +- 'Filter (('a2 = 10) AND (1 = 1))
+!:                 +- 'SubqueryAlias spark_catalog.cheechuen.t1                                                                                :                 +- SubqueryAlias spark_catalog.cheechuen.t1
+!:                    +- 'UnresolvedCatalogRelation `cheechuen`.`t1`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false   :                    +- Relation cheechuen.t1[a1#18,a2#19] parquet
+ +- 'Project ['b1, 'b2, 1.0 AS b3#73]                                                                                                          +- 'Project ['b1, 'b2, 1.0 AS b3#73]
+    +- 'Filter ('b2 = 10)                                                                                                                         +- 'Filter ('b2 = 10)
+!      +- 'SubqueryAlias spark_catalog.cheechuen.t2                                                                                                  +- SubqueryAlias spark_catalog.cheechuen.t2
+!         +- 'UnresolvedCatalogRelation `cheechuen`.`t2`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false                        +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences ===
+ 'Except false                                                        'Except false
+!:- 'Distinct                                                         :- Distinct
+!:  +- 'Project ['a1, 'a2, custom AS a3#72]                           :  +- Project [a1#18, a2#19, custom AS a3#72]
+!:     +- 'Filter (('a1 > 5) AND (1 = 1))                             :     +- Filter ((a1#18 > 5) AND (1 = 1))
+!:        +- 'SubqueryAlias __auto_generated_subquery_name            :        +- SubqueryAlias __auto_generated_subquery_name
+!:           +- 'Project [*]                                          :           +- Project [a1#18, a2#19]
+!:              +- 'Filter (('a2 = 10) AND (1 = 1))                   :              +- Filter ((a2#19 = 10) AND (1 = 1))
+ :                 +- SubqueryAlias spark_catalog.cheechuen.t1        :                 +- SubqueryAlias spark_catalog.cheechuen.t1
+ :                    +- Relation cheechuen.t1[a1#18,a2#19] parquet   :                    +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!+- 'Project ['b1, 'b2, 1.0 AS b3#73]                                 +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!   +- 'Filter ('b2 = 10)                                                +- Filter (b2#75 = 10)
+       +- SubqueryAlias spark_catalog.cheechuen.t2                          +- SubqueryAlias spark_catalog.cheechuen.t2
+          +- Relation cheechuen.t2[b1#74,b2#75] parquet                        +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.TypeCoercionBase$WidenSetOperationTypes ===
+!'Except false                                                        Except false
+!:- Distinct                                                          :- Project [a1#18, a2#19, a3#72]
+!:  +- Project [a1#18, a2#19, custom AS a3#72]                        :  +- Distinct
+!:     +- Filter ((a1#18 > 5) AND (1 = 1))                            :     +- Project [a1#18, a2#19, custom AS a3#72]
+!:        +- SubqueryAlias __auto_generated_subquery_name             :        +- Filter ((a1#18 > 5) AND (1 = 1))
+!:           +- Project [a1#18, a2#19]                                :           +- SubqueryAlias __auto_generated_subquery_name
+!:              +- Filter ((a2#19 = 10) AND (1 = 1))                  :              +- Project [a1#18, a2#19]
+!:                 +- SubqueryAlias spark_catalog.cheechuen.t1        :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+!:                    +- Relation cheechuen.t1[a1#18,a2#19] parquet   :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+!+- Project [b1#74, b2#75, 1.0 AS b3#73]                              :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!   +- Filter (b2#75 = 10)                                            +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!      +- SubqueryAlias spark_catalog.cheechuen.t2                       +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!         +- Relation cheechuen.t2[b1#74,b2#75] parquet                     +- Filter (b2#75 = 10)
+!                                                                              +- SubqueryAlias spark_catalog.cheechuen.t2
+!                                                                                 +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Resolution ===
+!'Except false                                                         Except false
+!:- 'Distinct                                                          :- Project [a1#18, a2#19, a3#72]
+!:  +- 'Project ['a1, 'a2, custom AS a3#72]                            :  +- Distinct
+!:     +- 'Filter (('a1 > 5) AND (1 = 1))                              :     +- Project [a1#18, a2#19, custom AS a3#72]
+!:        +- 'SubqueryAlias __auto_generated_subquery_name             :        +- Filter ((a1#18 > 5) AND (1 = 1))
+!:           +- 'Project [*]                                           :           +- SubqueryAlias __auto_generated_subquery_name
+!:              +- 'Filter (('a2 = 10) AND (1 = 1))                    :              +- Project [a1#18, a2#19]
+!:                 +- 'UnresolvedRelation [cheechuen, t1], [], false   :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+!+- 'Project ['b1, 'b2, 1.0 AS b3#73]                                  :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+!   +- 'Filter ('b2 = 10)                                              :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!      +- 'UnresolvedRelation [cheechuen, t2], [], false               +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!                                                                         +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!                                                                            +- Filter (b2#75 = 10)
+!                                                                               +- SubqueryAlias spark_catalog.cheechuen.t2
+!                                                                                  +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Apply Char Padding has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Nondeterministic has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UDF has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UpdateNullability has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.CleanupAliases ===
+ Except false                                                            Except false
+ :- Project [a1#18, a2#19, a3#72]                                        :- Project [a1#18, a2#19, a3#72]
+ :  +- Distinct                                                          :  +- Distinct
+ :     +- Project [a1#18, a2#19, custom AS a3#72]                        :     +- Project [a1#18, a2#19, custom AS a3#72]
+ :        +- Filter ((a1#18 > 5) AND (1 = 1))                            :        +- Filter ((a1#18 > 5) AND (1 = 1))
+ :           +- SubqueryAlias __auto_generated_subquery_name             :           +- SubqueryAlias __auto_generated_subquery_name
+ :              +- Project [a1#18, a2#19]                                :              +- Project [a1#18, a2#19]
+ :                 +- Filter ((a2#19 = 10) AND (1 = 1))                  :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+ :                    +- SubqueryAlias spark_catalog.cheechuen.t1        :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+ :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet   :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+ +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]               +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+    +- Project [b1#74, b2#75, 1.0 AS b3#73]                                 +- Project [b1#74, b2#75, 1.0 AS b3#73]
+       +- Filter (b2#75 = 10)                                                  +- Filter (b2#75 = 10)
+          +- SubqueryAlias spark_catalog.cheechuen.t2                             +- SubqueryAlias spark_catalog.cheechuen.t2
+             +- Relation cheechuen.t2[b1#74,b2#75] parquet                           +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Cleanup ===
+ Except false                                                            Except false
+ :- Project [a1#18, a2#19, a3#72]                                        :- Project [a1#18, a2#19, a3#72]
+ :  +- Distinct                                                          :  +- Distinct
+ :     +- Project [a1#18, a2#19, custom AS a3#72]                        :     +- Project [a1#18, a2#19, custom AS a3#72]
+ :        +- Filter ((a1#18 > 5) AND (1 = 1))                            :        +- Filter ((a1#18 > 5) AND (1 = 1))
+ :           +- SubqueryAlias __auto_generated_subquery_name             :           +- SubqueryAlias __auto_generated_subquery_name
+ :              +- Project [a1#18, a2#19]                                :              +- Project [a1#18, a2#19]
+ :                 +- Filter ((a2#19 = 10) AND (1 = 1))                  :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+ :                    +- SubqueryAlias spark_catalog.cheechuen.t1        :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+ :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet   :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+ +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]               +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+    +- Project [b1#74, b2#75, 1.0 AS b3#73]                                 +- Project [b1#74, b2#75, 1.0 AS b3#73]
+       +- Filter (b2#75 = 10)                                                  +- Filter (b2#75 = 10)
+          +- SubqueryAlias spark_catalog.cheechuen.t2                             +- SubqueryAlias spark_catalog.cheechuen.t2
+             +- Relation cheechuen.t2[b1#74,b2#75] parquet                           +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 193
+Total time: 0.042169554 seconds
+Total number of effective runs: 5
+Total time of effective runs: 0.036744912 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Substitution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Disable Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Simple Sanity Check has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveAliases ===
+!'Project [unresolvedalias(cast(a1#18 as string), None), unresolvedalias(cast(a2#19 as string), None), unresolvedalias(cast(a3#72 as string), None)]   Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+ +- Except false                                                                                                                                       +- Except false
+    :- Project [a1#18, a2#19, a3#72]                                                                                                                      :- Project [a1#18, a2#19, a3#72]
+    :  +- Distinct                                                                                                                                        :  +- Distinct
+    :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                                                      :     +- Project [a1#18, a2#19, custom AS a3#72]
+    :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                                                          :        +- Filter ((a1#18 > 5) AND (1 = 1))
+    :           +- SubqueryAlias __auto_generated_subquery_name                                                                                           :           +- SubqueryAlias __auto_generated_subquery_name
+    :              +- Project [a1#18, a2#19]                                                                                                              :              +- Project [a1#18, a2#19]
+    :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                                                                :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+    :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                                                                      :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+    :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                                 :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+    +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                                                             +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+       +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                                               +- Project [b1#74, b2#75, 1.0 AS b3#73]
+          +- Filter (b2#75 = 10)                                                                                                                                +- Filter (b2#75 = 10)
+             +- SubqueryAlias spark_catalog.cheechuen.t2                                                                                                           +- SubqueryAlias spark_catalog.cheechuen.t2
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                                                         +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.ResolveTimeZone ===
+ Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]   Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+ +- Except false                                                                                            +- Except false
+    :- Project [a1#18, a2#19, a3#72]                                                                           :- Project [a1#18, a2#19, a3#72]
+    :  +- Distinct                                                                                             :  +- Distinct
+    :     +- Project [a1#18, a2#19, custom AS a3#72]                                                           :     +- Project [a1#18, a2#19, custom AS a3#72]
+    :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                               :        +- Filter ((a1#18 > 5) AND (1 = 1))
+    :           +- SubqueryAlias __auto_generated_subquery_name                                                :           +- SubqueryAlias __auto_generated_subquery_name
+    :              +- Project [a1#18, a2#19]                                                                   :              +- Project [a1#18, a2#19]
+    :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                     :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+    :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                           :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+    :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                      :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+    +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                  +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+       +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                    +- Project [b1#74, b2#75, 1.0 AS b3#73]
+          +- Filter (b2#75 = 10)                                                                                     +- Filter (b2#75 = 10)
+             +- SubqueryAlias spark_catalog.cheechuen.t2                                                                +- SubqueryAlias spark_catalog.cheechuen.t2
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                              +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Resolution ===
+!'Project [unresolvedalias(cast(a1#18 as string), None), unresolvedalias(cast(a2#19 as string), None), unresolvedalias(cast(a3#72 as string), None)]   Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+ +- Except false                                                                                                                                       +- Except false
+    :- Project [a1#18, a2#19, a3#72]                                                                                                                      :- Project [a1#18, a2#19, a3#72]
+    :  +- Distinct                                                                                                                                        :  +- Distinct
+    :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                                                      :     +- Project [a1#18, a2#19, custom AS a3#72]
+    :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                                                          :        +- Filter ((a1#18 > 5) AND (1 = 1))
+    :           +- SubqueryAlias __auto_generated_subquery_name                                                                                           :           +- SubqueryAlias __auto_generated_subquery_name
+    :              +- Project [a1#18, a2#19]                                                                                                              :              +- Project [a1#18, a2#19]
+    :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                                                                :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+    :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                                                                      :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+    :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                                 :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+    +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                                                             +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+       +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                                               +- Project [b1#74, b2#75, 1.0 AS b3#73]
+          +- Filter (b2#75 = 10)                                                                                                                                +- Filter (b2#75 = 10)
+             +- SubqueryAlias spark_catalog.cheechuen.t2                                                                                                           +- SubqueryAlias spark_catalog.cheechuen.t2
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                                                         +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Apply Char Padding has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Nondeterministic has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UDF has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UpdateNullability has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.CleanupAliases ===
+ Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]   Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+ +- Except false                                                                                            +- Except false
+    :- Project [a1#18, a2#19, a3#72]                                                                           :- Project [a1#18, a2#19, a3#72]
+    :  +- Distinct                                                                                             :  +- Distinct
+    :     +- Project [a1#18, a2#19, custom AS a3#72]                                                           :     +- Project [a1#18, a2#19, custom AS a3#72]
+    :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                               :        +- Filter ((a1#18 > 5) AND (1 = 1))
+    :           +- SubqueryAlias __auto_generated_subquery_name                                                :           +- SubqueryAlias __auto_generated_subquery_name
+    :              +- Project [a1#18, a2#19]                                                                   :              +- Project [a1#18, a2#19]
+    :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                     :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+    :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                           :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+    :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                      :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+    +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                  +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+       +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                    +- Project [b1#74, b2#75, 1.0 AS b3#73]
+          +- Filter (b2#75 = 10)                                                                                     +- Filter (b2#75 = 10)
+             +- SubqueryAlias spark_catalog.cheechuen.t2                                                                +- SubqueryAlias spark_catalog.cheechuen.t2
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                              +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Cleanup ===
+ Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]   Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+ +- Except false                                                                                            +- Except false
+    :- Project [a1#18, a2#19, a3#72]                                                                           :- Project [a1#18, a2#19, a3#72]
+    :  +- Distinct                                                                                             :  +- Distinct
+    :     +- Project [a1#18, a2#19, custom AS a3#72]                                                           :     +- Project [a1#18, a2#19, custom AS a3#72]
+    :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                               :        +- Filter ((a1#18 > 5) AND (1 = 1))
+    :           +- SubqueryAlias __auto_generated_subquery_name                                                :           +- SubqueryAlias __auto_generated_subquery_name
+    :              +- Project [a1#18, a2#19]                                                                   :              +- Project [a1#18, a2#19]
+    :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                     :                 +- Filter ((a2#19 = 10) AND (1 = 1))
+    :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                           :                    +- SubqueryAlias spark_catalog.cheechuen.t1
+    :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                      :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet
+    +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                  +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+       +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                    +- Project [b1#74, b2#75, 1.0 AS b3#73]
+          +- Filter (b2#75 = 10)                                                                                     +- Filter (b2#75 = 10)
+             +- SubqueryAlias spark_catalog.cheechuen.t2                                                                +- SubqueryAlias spark_catalog.cheechuen.t2
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                              +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 139
+Total time: 0.001739074 seconds
+Total number of effective runs: 3
+Total time of effective runs: 2.33673E-4 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Substitution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Disable Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Simple Sanity Check has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Resolution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Apply Char Padding has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Nondeterministic has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UDF has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UpdateNullability has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Cleanup has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 84
+Total time: 9.47717E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Eliminate Distinct has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.EliminateSubqueryAliases ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Except false                                                                                                  +- Except false
+          :- Project [a1#18, a2#19, a3#72]                                                                                 :- Project [a1#18, a2#19, a3#72]
+          :  +- Distinct                                                                                                   :  +- Distinct
+          :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                 :     +- Project [a1#18, a2#19, custom AS a3#72]
+          :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                     :        +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :           +- SubqueryAlias __auto_generated_subquery_name                                                      :           +- Project [a1#18, a2#19]
+!         :              +- Project [a1#18, a2#19]                                                                         :              +- Filter ((a2#19 = 10) AND (1 = 1))
+!         :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                           :                 +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                                 +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!         :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                               +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                              +- Filter (b2#75 = 10)
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!               +- Filter (b2#75 = 10)                                                       
+!                  +- SubqueryAlias spark_catalog.cheechuen.t2                               
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                          
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Finish Analysis ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Except false                                                                                                  +- Except false
+          :- Project [a1#18, a2#19, a3#72]                                                                                 :- Project [a1#18, a2#19, a3#72]
+          :  +- Distinct                                                                                                   :  +- Distinct
+          :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                 :     +- Project [a1#18, a2#19, custom AS a3#72]
+          :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                     :        +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :           +- SubqueryAlias __auto_generated_subquery_name                                                      :           +- Project [a1#18, a2#19]
+!         :              +- Project [a1#18, a2#19]                                                                         :              +- Filter ((a2#19 = 10) AND (1 = 1))
+!         :                 +- Filter ((a2#19 = 10) AND (1 = 1))                                                           :                 +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :                    +- SubqueryAlias spark_catalog.cheechuen.t1                                                 +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!         :                       +- Relation cheechuen.t1[a1#18,a2#19] parquet                                               +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                              +- Filter (b2#75 = 10)
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!               +- Filter (b2#75 = 10)                                                       
+!                  +- SubqueryAlias spark_catalog.cheechuen.t2                               
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                          
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Except false                                                                                                  +- Except false
+!         :- Project [a1#18, a2#19, a3#72]                                                                                 :- Distinct
+!         :  +- Distinct                                                                                                   :  +- Project [a1#18, a2#19, custom AS a3#72]
+!         :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                 :     +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                     :        +- Filter ((a2#19 = 10) AND (1 = 1))
+!         :           +- Project [a1#18, a2#19]                                                                            :           +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :              +- Filter ((a2#19 = 10) AND (1 = 1))                                                              +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!         :                 +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                     +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                              +- Filter (b2#75 = 10)
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!               +- Filter (b2#75 = 10)                                                       
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                             
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Union ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Except false                                                                                                  +- Except false
+!         :- Project [a1#18, a2#19, a3#72]                                                                                 :- Distinct
+!         :  +- Distinct                                                                                                   :  +- Project [a1#18, a2#19, custom AS a3#72]
+!         :     +- Project [a1#18, a2#19, custom AS a3#72]                                                                 :     +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :        +- Filter ((a1#18 > 5) AND (1 = 1))                                                                     :        +- Filter ((a2#19 = 10) AND (1 = 1))
+!         :           +- Project [a1#18, a2#19]                                                                            :           +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :              +- Filter ((a2#19 = 10) AND (1 = 1))                                                              +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!         :                 +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                     +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                              +- Filter (b2#75 = 10)
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!               +- Filter (b2#75 = 10)                                                       
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                             
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch LocalRelation early has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ReplaceExceptWithAntiJoin ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+!      +- Except false                                                                                                  +- Distinct
+!         :- Distinct                                                                                                      +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))
+!         :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                       :- Distinct
+!         :     +- Filter ((a1#18 > 5) AND (1 = 1))                                                                           :  +- Project [a1#18, a2#19, custom AS a3#72]
+!         :        +- Filter ((a2#19 = 10) AND (1 = 1))                                                                       :     +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :           +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                           :        +- Filter ((a2#19 = 10) AND (1 = 1))
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                           :           +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                          +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!               +- Filter (b2#75 = 10)                                                                                           +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                    +- Filter (b2#75 = 10)
+!                                                                                                                                      +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ReplaceDistinctWithAggregate ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+!      +- Distinct                                                                                                      +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+          +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))                              +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))
+!            :- Distinct                                                                                                      :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+             :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                    :  +- Project [a1#18, a2#19, custom AS a3#72]
+             :     +- Filter ((a1#18 > 5) AND (1 = 1))                                                                        :     +- Filter ((a1#18 > 5) AND (1 = 1))
+             :        +- Filter ((a2#19 = 10) AND (1 = 1))                                                                    :        +- Filter ((a2#19 = 10) AND (1 = 1))
+             :           +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                        :           +- Relation cheechuen.t1[a1#18,a2#19] parquet
+             +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                        +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+                +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                          +- Project [b1#74, b2#75, 1.0 AS b3#73]
+                   +- Filter (b2#75 = 10)                                                                                           +- Filter (b2#75 = 10)
+                      +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                    +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Replace Operators ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+!      +- Except false                                                                                                  +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+!         :- Distinct                                                                                                      +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))
+!         :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                       :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+!         :     +- Filter ((a1#18 > 5) AND (1 = 1))                                                                           :  +- Project [a1#18, a2#19, custom AS a3#72]
+!         :        +- Filter ((a2#19 = 10) AND (1 = 1))                                                                       :     +- Filter ((a1#18 > 5) AND (1 = 1))
+!         :           +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                           :        +- Filter ((a2#19 = 10) AND (1 = 1))
+!         +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                           :           +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                          +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!               +- Filter (b2#75 = 10)                                                                                           +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                    +- Filter (b2#75 = 10)
+!                                                                                                                                      +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Aggregate has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownPredicates ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+          +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))                              +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))
+             :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+             :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                    :  +- Project [a1#18, a2#19, custom AS a3#72]
+!            :     +- Filter ((a1#18 > 5) AND (1 = 1))                                                                        :     +- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))
+!            :        +- Filter ((a2#19 = 10) AND (1 = 1))                                                                    :        +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            :           +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                        +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!            +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                           +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!               +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                             +- Filter (b2#75 = 10)
+!                  +- Filter (b2#75 = 10)                                                                                              +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                          
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownLeftSemiAntiJoin ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+    +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+!         +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))                              +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+!            :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Project [a1#18, a2#19, custom AS a3#72]
+!            :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                       +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> b3#76))
+!            :     +- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))                                                           :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))
+!            :        +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                 :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                              +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]
+!               +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                                +- Project [b1#74, b2#75, 1.0 AS b3#73]
+!                  +- Filter (b2#75 = 10)                                                                                                 +- Filter (b2#75 = 10)
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                          +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.CollapseProject ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+!   +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Aggregate [a1#18, a2#19, a3#72], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]
+       +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]
+!         +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Project [a1#18, a2#19, custom AS a3#72]
+!            +- Project [a1#18, a2#19, custom AS a3#72]                                                                       +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> b3#76))
+!               +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> b3#76))                             :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))
+!                  :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))                                                        :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!                  :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                              +- Project [b1#74, b2#75, cast(1.0 as string) AS b3#76]
+!                  +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                                                        +- Filter (b2#75 = 10)
+!                     +- Project [b1#74, b2#75, 1.0 AS b3#73]                                                                          +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!                        +- Filter (b2#75 = 10)                                              
+!                           +- Relation cheechuen.t2[b1#74,b2#75] parquet                    
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.FoldablePropagation ===
+ GlobalLimit 21                                                                                                                            GlobalLimit 21
+ +- LocalLimit 21                                                                                                                          +- LocalLimit 21
+!   +- Aggregate [a1#18, a2#19, a3#72], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(custom as string) AS a3#85]
+!      +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                                                 +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]
+          +- Project [a1#18, a2#19, custom AS a3#72]                                                                                                +- Project [a1#18, a2#19, custom AS a3#72]
+!            +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> b3#76))                                                      +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> cast(1.0 as string)))
+                :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))                                                                                    :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))
+                :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                                          :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+                +- Project [b1#74, b2#75, cast(1.0 as string) AS b3#76]                                                                                   +- Project [b1#74, b2#75, cast(1.0 as string) AS b3#76]
+                   +- Filter (b2#75 = 10)                                                                                                                    +- Filter (b2#75 = 10)
+                      +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                                             +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ConstantFolding ===
+ GlobalLimit 21                                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                                            +- LocalLimit 21
+!   +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(custom as string) AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+       +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]                                                                        +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]
+          +- Project [a1#18, a2#19, custom AS a3#72]                                                                                                  +- Project [a1#18, a2#19, custom AS a3#72]
+!            +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (custom <=> cast(1.0 as string)))                                          +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND false)
+!               :- Filter (((a2#19 = 10) AND (1 = 1)) AND (a1#18 > 5))                                                                                      :- Filter (((a2#19 = 10) AND true) AND (a1#18 > 5))
+                :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                                            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!               +- Project [b1#74, b2#75, cast(1.0 as string) AS b3#76]                                                                                     +- Project [b1#74, b2#75, 1.0 AS b3#76]
+                   +- Filter (b2#75 = 10)                                                                                                                      +- Filter (b2#75 = 10)
+                      +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                                               +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.BooleanSimplification ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+       +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]                                                        +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]
+          +- Project [a1#18, a2#19, custom AS a3#72]                                                                                  +- Project [a1#18, a2#19, custom AS a3#72]
+!            +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND false)                                                     +- Join LeftAnti, false
+!               :- Filter (((a2#19 = 10) AND true) AND (a1#18 > 5))                                                                         :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+                :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+                +- Project [b1#74, b2#75, 1.0 AS b3#76]                                                                                     +- Project [b1#74, b2#75, 1.0 AS b3#76]
+                   +- Filter (b2#75 = 10)                                                                                                      +- Filter (b2#75 = 10)
+                      +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                               +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveRedundantAggregates ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Aggregate [a1#18, a2#19, custom], [a1#18, a2#19, custom AS a3#72]                                                        +- Project [a1#18, a2#19, custom AS a3#72]
+!         +- Project [a1#18, a2#19, custom AS a3#72]                                                                                  +- Join LeftAnti, false
+!            +- Join LeftAnti, false                                                                                                     :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+!               :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                 :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!               :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                         +- Project [b1#74, b2#75, 1.0 AS b3#76]
+!               +- Project [b1#74, b2#75, 1.0 AS b3#76]                                                                                     +- Filter (b2#75 = 10)
+!                  +- Filter (b2#75 = 10)                                                                                                      +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                          
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Project [a1#18, a2#19, custom AS a3#72]                                                                                  +- Project [a1#18, a2#19]
+!         +- Join LeftAnti, false                                                                                                     +- Project [a1#18, a2#19]
+!            :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                    +- Join LeftAnti, false
+!            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                               :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+!            +- Project [b1#74, b2#75, 1.0 AS b3#76]                                                                                        :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!               +- Filter (b2#75 = 10)                                                                                                      +- Project
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                               +- Project
+!                                                                                                                                                 +- Filter (b2#75 = 10)
+!                                                                                                                                                    +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.CollapseProject ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+       +- Project [a1#18, a2#19]                                                                                                   +- Project [a1#18, a2#19]
+!         +- Project [a1#18, a2#19]                                                                                                   +- Join LeftAnti, false
+!            +- Join LeftAnti, false                                                                                                     :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+!               :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                 :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!               :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                         +- Project
+!               +- Project                                                                                                                  +- Filter (b2#75 = 10)
+!                  +- Project                                                                                                                  +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!                     +- Filter (b2#75 = 10)                                                 
+!                        +- Relation cheechuen.t2[b1#74,b2#75] parquet                       
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Project [a1#18, a2#19]                                                                                                   +- Join LeftAnti, false
+!         +- Join LeftAnti, false                                                                                                     :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+!            :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                 :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                         +- Project
+!            +- Project                                                                                                                  +- Filter (b2#75 = 10)
+!               +- Filter (b2#75 = 10)                                                                                                      +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!                  +- Relation cheechuen.t2[b1#74,b2#75] parquet                             
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Operator Optimization before Inferring Filters ===
+ GlobalLimit 21                                                                                                   GlobalLimit 21
+ +- LocalLimit 21                                                                                                 +- LocalLimit 21
+!   +- Project [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, cast(a3#72 as string) AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                        +- Join LeftAnti, false
+!         +- Join LeftAnti, (((a1#18 <=> b1#74) AND (a2#19 <=> b2#75)) AND (a3#72 <=> b3#76))                              :- Filter ((a2#19 = 10) AND (a1#18 > 5))
+!            :- Aggregate [a1#18, a2#19, a3#72], [a1#18, a2#19, a3#72]                                                     :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!            :  +- Project [a1#18, a2#19, custom AS a3#72]                                                                 +- Project
+!            :     +- Filter ((a1#18 > 5) AND (1 = 1))                                                                        +- Filter (b2#75 = 10)
+!            :        +- Filter ((a2#19 = 10) AND (1 = 1))                                                                       +- Relation cheechuen.t2[b1#74,b2#75] parquet
+!            :           +- Relation cheechuen.t1[a1#18,a2#19] parquet                       
+!            +- Project [b1#74, b2#75, cast(b3#73 as string) AS b3#76]                       
+!               +- Project [b1#74, b2#75, 1.0 AS b3#73]                                      
+!                  +- Filter (b2#75 = 10)                                                    
+!                     +- Relation cheechuen.t2[b1#74,b2#75] parquet                          
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.InferFiltersFromConstraints ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+       +- Join LeftAnti, false                                                                                                     +- Join LeftAnti, false
+!         :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                    :- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))
+          :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+          +- Project                                                                                                                  +- Project
+!            +- Filter (b2#75 = 10)                                                                                                      +- Filter (isnotnull(b2#75) AND (b2#75 = 10))
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                               +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Infer Filters ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+       +- Join LeftAnti, false                                                                                                     +- Join LeftAnti, false
+!         :- Filter ((a2#19 = 10) AND (a1#18 > 5))                                                                                    :- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))
+          :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                                                            :  +- Relation cheechuen.t1[a1#18,a2#19] parquet
+          +- Project                                                                                                                  +- Project
+!            +- Filter (b2#75 = 10)                                                                                                      +- Filter (isnotnull(b2#75) AND (b2#75 = 10))
+                +- Relation cheechuen.t2[b1#74,b2#75] parquet                                                                               +- Relation cheechuen.t2[b1#74,b2#75] parquet
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Push extra predicate through join has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Join Reorder has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Eliminate Sorts has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Decimal Optimizations has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Conditional Distinct Aggregate Rewrite has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Single Type Distinct Aggregate Rewrite has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PropagateEmptyRelation ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Join LeftAnti, false                                                                                                     +- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))
+!         :- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))                                      +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                   
+!         +- Project                                                                         
+!            +- Filter (isnotnull(b2#75) AND (b2#75 = 10))                                   
+!               +- Relation cheechuen.t2[b1#74,b2#75] parquet                                
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch LocalRelation ===
+ GlobalLimit 21                                                                                                              GlobalLimit 21
+ +- LocalLimit 21                                                                                                            +- LocalLimit 21
+    +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]      +- Aggregate [a1#18, a2#19, custom], [cast(a1#18 as string) AS a1#83, cast(a2#19 as string) AS a2#84, custom AS a3#85]
+!      +- Join LeftAnti, false                                                                                                     +- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))
+!         :- Filter ((isnotnull(a2#19) AND isnotnull(a1#18)) AND ((a2#19 = 10) AND (a1#18 > 5)))                                      +- Relation cheechuen.t1[a1#18,a2#19] parquet
+!         :  +- Relation cheechuen.t1[a1#18,a2#19] parquet                                   
+!         +- Project                                                                         
+!            +- Filter (isnotnull(b2#75) AND (b2#75 = 10))                                   
+!               +- Relation cheechuen.t2[b1#74,b2#75] parquet                                
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Check Cartesian Products has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch RewriteSubquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Window TopK Filter Push Down has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch PartitionPruning has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Extract Python UDFs has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch User Provided Optimizers has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 277
+Total time: 0.03150478 seconds
+Total number of effective runs: 16
+Total time of effective runs: 0.018221426 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.RemoveRedundantProjects ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                     CollectLimit 21
+ +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                        +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+    +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                          +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!      +- Project [a1#18, a2#19]                                                                                                                                                                                                                                                                                                                                                                                                           +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!         +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                              +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+!            +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.exchange.EnsureRequirements ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                  CollectLimit 21
+ +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                     +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!   +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                       +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]
+!      +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                           +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!         +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>            +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                             +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch AQE Preparations ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                     CollectLimit 21
+ +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                        +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!   +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                          +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]
+!      +- Project [a1#18, a2#19]                                                                                                                                                                                                                                                                                                                                                                                                           +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+          +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                              +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+             +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>               +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.adaptive.InsertAdaptiveSparkPlan ===
+!CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                     AdaptiveSparkPlan isFinalPlan=false
+!+- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                        +- CollectLimit 21
+!   +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                          +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!      +- Project [a1#18, a2#19]                                                                                                                                                                                                                                                                                                                                                                                                           +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]
+!         +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!            +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>               +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                   +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Preparations ===
+!CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                     AdaptiveSparkPlan isFinalPlan=false
+!+- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                        +- CollectLimit 21
+!   +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                          +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!      +- Project [a1#18, a2#19]                                                                                                                                                                                                                                                                                                                                                                                                           +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]
+!         +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!            +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>               +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                   +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Substitution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Disable Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Simple Sanity Check has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveDeserializer ===
+!'DeserializeToObject unresolveddeserializer(createexternalrow(getcolumnbyordinal(0, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, getcolumnbyordinal(1, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, getcolumnbyordinal(2, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false))), obj#90: org.apache.spark.sql.Row   DeserializeToObject createexternalrow(a1#83.toString, a2#84.toString, a3#85.toString, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)), obj#90: org.apache.spark.sql.Row
+ +- LocalRelation <empty>, [a1#83, a2#84, a3#85]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    +- LocalRelation <empty>, [a1#83, a2#84, a3#85]
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch Resolution ===
+!'DeserializeToObject unresolveddeserializer(createexternalrow(getcolumnbyordinal(0, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, getcolumnbyordinal(1, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, getcolumnbyordinal(2, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)).toString, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false))), obj#90: org.apache.spark.sql.Row   DeserializeToObject createexternalrow(a1#83.toString, a2#84.toString, a3#85.toString, StructField(a1,StringType,true), StructField(a2,StringType,true), StructField(a3,StringType,false)), obj#90: org.apache.spark.sql.Row
+ +- LocalRelation <empty>, [a1#83, a2#84, a3#85]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    +- LocalRelation <empty>, [a1#83, a2#84, a3#85]
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Apply Char Padding has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Nondeterministic has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UDF has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch UpdateNullability has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Subquery has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Cleanup has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 138
+Total time: 0.001662622 seconds
+Total number of effective runs: 1
+Total time of effective runs: 2.35388E-4 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch AQE Query Stage Optimization has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.ApplyColumnarRulesAndInsertTransitions ===
+!Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]                                                                                                                                                                                                                                                                                                                                       Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#288]
+ +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                    +- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+    +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                        +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!      +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>         +- ColumnarToRow
+!                                                                                                                                                                                                                                                                                                                                                                                                                                       +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.CollapseCodegenStages ===
+!Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#288]                                                                                                                                                                                                                                                                                                                                          Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+!+- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                       +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!   +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                           +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!      +- ColumnarToRow                                                                                                                                                                                                                                                                                                                                                                                                                 +- *(1) ColumnarToRow
+          +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>            +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch AQE Post Stage Creation ===
+!Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#275]                                                                                                                                                                                                                                                                                                                                       Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+!+- HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                    +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!   +- Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                        +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!      +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>         +- *(1) ColumnarToRow
+!                                                                                                                                                                                                                                                                                                                                                                                                                                       +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch CleanExpressions has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 4.678E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch CleanExpressions has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 4.366E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch CleanExpressions has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 2.946E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch CleanExpressions has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 3.12E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Propagate Empty Relations has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch Dynamic Join Selection has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 4
+Total time: 2.10271E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger: Batch AQE Replanning has no effect.
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.adaptive.CoalesceShufflePartitions ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                           CollectLimit 21
+ +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!   +- ShuffleQueryStage 0                                                                                                                                                                                                                                                                                                                                                                                                                    +- AQEShuffleRead coalesced
+!      +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]                                                                                                                                                                                                                                                                                                                                                +- ShuffleQueryStage 0
+!         +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                           +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+!            +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                               +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!               +- *(1) ColumnarToRow                                                                                                                                                                                                                                                                                                                                                                                                                     +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!                  +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>                     +- *(1) ColumnarToRow
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                               +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch AQE Query Stage Optimization ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                           CollectLimit 21
+ +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+!   +- ShuffleQueryStage 0                                                                                                                                                                                                                                                                                                                                                                                                                    +- AQEShuffleRead coalesced
+!      +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]                                                                                                                                                                                                                                                                                                                                                +- ShuffleQueryStage 0
+!         +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                           +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+!            +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                               +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+!               +- *(1) ColumnarToRow                                                                                                                                                                                                                                                                                                                                                                                                                     +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+!                  +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>                     +- *(1) ColumnarToRow
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                               +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.CollapseCodegenStages ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                              CollectLimit 21
+!+- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                                 +- *(2) HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+    +- AQEShuffleRead coalesced                                                                                                                                                                                                                                                                                                                                                                                                                  +- AQEShuffleRead coalesced
+       +- ShuffleQueryStage 0                                                                                                                                                                                                                                                                                                                                                                                                                       +- ShuffleQueryStage 0
+          +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]                                                                                                                                                                                                                                                                                                                                                   +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+             +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                              +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+                +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                                  +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+                   +- *(1) ColumnarToRow                                                                                                                                                                                                                                                                                                                                                                                                                        +- *(1) ColumnarToRow
+                      +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>                        +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
+22/05/08 21:15:31 WARN [main] PlanChangeLogger:
+=== Result of Batch AQE Post Stage Creation ===
+ CollectLimit 21                                                                                                                                                                                                                                                                                                                                                                                                                              CollectLimit 21
+!+- HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])                                                                                                                                                                                                                                                                                                                                                 +- *(2) HashAggregate(keys=[a1#18, a2#19, custom#89], functions=[], output=[a1#83, a2#84, a3#85])
+    +- AQEShuffleRead coalesced                                                                                                                                                                                                                                                                                                                                                                                                                  +- AQEShuffleRead coalesced
+       +- ShuffleQueryStage 0                                                                                                                                                                                                                                                                                                                                                                                                                       +- ShuffleQueryStage 0
+          +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]                                                                                                                                                                                                                                                                                                                                                   +- Exchange hashpartitioning(a1#18, a2#19, custom#89, 200), ENSURE_REQUIREMENTS, [id=#294]
+             +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])                                                                                                                                                                                                                                                                                                                              +- *(1) HashAggregate(keys=[a1#18, a2#19, custom AS custom#89], functions=[], output=[a1#18, a2#19, custom#89])
+                +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))                                                                                                                                                                                                                                                                                                                                                  +- *(1) Filter (((isnotnull(a2#19) AND isnotnull(a1#18)) AND (a2#19 = 10)) AND (a1#18 > 5))
+                   +- *(1) ColumnarToRow                                                                                                                                                                                                                                                                                                                                                                                                                        +- *(1) ColumnarToRow
+                      +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>                        +- FileScan parquet cheechuen.t1[a1#18,a2#19] Batched: true, DataFilters: [isnotnull(a2#19), isnotnull(a1#18), (a2#19 = 10), (a1#18 > 5)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://emr-header-1.cluster-285604:9000/user/hive/warehouse/cheechuen...., PartitionFilters: [], PushedFilters: [IsNotNull(a2), IsNotNull(a1), EqualTo(a2,10), GreaterThan(a1,5)], ReadSchema: struct<a1:int,a2:int>
+
++---+---+---+
+| a1| a2| a3|
++---+---+---+
++---+---+---+
+
+
+scala>
