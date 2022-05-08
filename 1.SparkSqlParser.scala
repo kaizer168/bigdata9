@@ -70,6 +70,11 @@ class SparkSqlAstBuilder extends AstBuilder {
    * key-value pair. The split between key and value is made by searching for the first `=`
    * character in the raw string.
    */
+  
+  override def visitShowVersion(ctx: ShowVersionContext): LogicalPlan = withOrigin(ctx) {
+    ShowVersionCommand()
+  }
+  
   override def visitSetConfiguration(ctx: SetConfigurationContext): LogicalPlan = withOrigin(ctx) {
     if (ctx.configKey() != null) {
       val keyStr = ctx.configKey().getText
