@@ -1245,6 +1245,7 @@ ansiNonReserved
     | UPDATE
     | USE
     | VALUES
+    | VERSION
     | VIEW
     | VIEWS
     | WINDOW
@@ -1517,6 +1518,7 @@ nonReserved
     | USE
     | USER
     | VALUES
+    | VERSION
     | VIEW
     | VIEWS
     | WHEN
