@@ -1,0 +1,17 @@
+scala> spark.sql("show version").show()
++--------------------+
+|             version|
++--------------------+
+|Spark Version: 3....|
++--------------------+
+
+
+scala> spark.sql("show v").show()
++--------------------+
+|             version|
++--------------------+
+|Spark Version: 3....|
++--------------------+
+
+
+scala> 
