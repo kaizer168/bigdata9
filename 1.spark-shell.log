@@ -15,3 +15,11 @@ scala> spark.sql("show v").show()
 
 
 scala> 
+
+spark-sql> show version;
+Spark Version: 3.2.2-SNAPSHOT, Java Version: 1.8.0_312
+Time taken: 0.013 seconds, Fetched 1 row(s)
+spark-sql> show v;
+Spark Version: 3.2.2-SNAPSHOT, Java Version: 1.8.0_312
+Time taken: 0.012 seconds, Fetched 1 row(s)
+spark-sql> 
